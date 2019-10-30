@@ -28,6 +28,7 @@
          - vim
          - htop
          - epel-release
+         - wget
           
   
 
