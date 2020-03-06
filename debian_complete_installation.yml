@@ -1,0 +1,32 @@
+---
+- hosts: debian
+
+  tasks:
+
+    # System update
+    - name: Ensure all pkgs are up-to-date
+      apt:
+         name: '*'
+         state: latest
+      become: true
+      tags: update
+
+   # Install packages
+    - name: Ensure system RPMs are installed and up-to-date
+      apt:
+        pkg: "{{ item }}"
+        state: latest
+      become: true
+      with_items:
+
+              - htop
+              - net-tools
+              - sudo
+              - tar
+              - unzip
+              - curl
+              - vim
+              - wget
+              - whois
+              - chkrootkit
+              - nmap
