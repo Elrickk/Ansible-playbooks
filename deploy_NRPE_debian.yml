@@ -1,0 +1,18 @@
+---
+- name: Deploy NRPE agent
+  hosts: debian
+  user: root
+  tasks:
+
+
+     - name: Execute the script
+       script: /etc/ansible/scripts/NRPE_Deploy.sh
+
+     - name: Copy NRPE plugins
+       copy: src=/etc/ansible/scripts/libexec dest=/usr/local/nagios mode=0777
+
+     - name: Transfer nrpe.cfg
+       copy: src=/etc/ansible/scripts/nrpe.cfg dest=/usr/local/nagios/etc mode=0777
+
+     - name: Restart NRPE
+       command: systemctl restart nrpe.service
