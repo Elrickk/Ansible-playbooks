@@ -1,0 +1,8 @@
+---
+- name: Reboot Debian servers
+  hosts: debian
+  user: root
+  tasks:
+
+     - name: reboot Debian servers
+       command: systemctl reboot
