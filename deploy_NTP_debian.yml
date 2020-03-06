@@ -1,0 +1,13 @@
+---
+- name: Transfer and execute a script.
+  hosts: debian
+  user: root
+  tasks:
+
+
+     - name: Transfer ntp.conf
+       copy: src=/etc/ansible/scripts/ntp.conf dest=/tmp mode=0777
+
+
+     - name: Execute the script
+       script: /etc/ansible/scripts/NTP_Deploy.sh
