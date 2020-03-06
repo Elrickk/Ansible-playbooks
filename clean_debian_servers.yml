@@ -1,0 +1,8 @@
+---
+- name: Clean Debian servers
+  hosts: debian
+  user: root
+  tasks:
+
+     - name: Execute the script
+       script: /etc/ansible/scripts/Clean_Debian.sh
