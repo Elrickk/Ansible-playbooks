@@ -1,0 +1,17 @@
+---
+- hosts: debian
+
+  tasks:
+
+
+    # System update
+    - name: Ensure all pkgs are up-to-date
+      apt:
+         name: '*'
+         state: latest
+      become: true
+      tags: update
+
+    # System upgrade
+    - name: Upgrade servers
+      apt: upgrade=dist
