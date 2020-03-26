@@ -1,0 +1,9 @@
+---
+- name: Docker install on Debian
+  hosts: debian
+  user: root
+  tasks:
+
+
+     - name: Execute the script
+       script: /etc/ansible/scripts/Docker_Install_Debian.sh
